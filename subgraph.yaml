@@ -8,7 +8,7 @@ dataSources:
       source:
           address: "0xA8e3315CE15cADdB4616AefD073e4CBF002C5D73"
           abi: AutoPay
-          startBlock: 9208302
+          startBlock: 9110364
       mapping:
           kind: ethereum/events
           apiVersion: 0.0.7
