@@ -40,9 +40,11 @@ dataSources:
           handler: handleFundsWithdrawn
         - event: Initialized(uint8)
           handler: handleInitialized
-        - event: JobCreated(indexed address,indexed bytes32,bytes32,indexed address,uint256,address,address,uint256,uint32,address,uint256,uint256,uint256,uint8)
+        - event: JobCreated(indexed address,indexed bytes32,bytes32,indexed
+            address,uint256,address,address,uint256,uint32,address,uint256,uint256,uint256,uint8)
           handler: handleJobCreated
-        - event: JobCreated(indexed address,indexed bytes32,bytes32,indexed address,uint256,uint256,address,address,uint256,uint32,address,uint256,uint256,uint256,uint8)
+        - event: JobCreated(indexed address,indexed bytes32,bytes32,indexed
+            address,uint256,uint256,address,address,uint256,uint32,address,uint256,uint256,uint256,uint8)
           handler: handleJobCreated1
         - event: JobSuccess(indexed uint256,indexed address,indexed address,bytes,bytes32,bool)
           handler: handleJobSuccess
@@ -50,8 +52,47 @@ dataSources:
           handler: handleOwnershipTransferred
         - event: Upgraded(indexed address)
           handler: handleUpgraded
-        - event: XReceiveData(indexed address,uint32,address,uint256,bytes32,uint256,address,address)
+        - event: XReceiveData(indexed
+            address,uint32,address,uint256,bytes32,uint256,address,address)
           handler: handleXReceiveData
-        - event: XTransferData(indexed address,indexed address,indexed address,address,address,uint256,uint256,uint256,uint32)
+        - event: XTransferData(indexed address,indexed address,indexed
+            address,address,address,uint256,uint256,uint256,uint32)
           handler: handleXTransferData
       file: ./src/auto-pay.ts
+  - kind: ethereum
+    name: Treasury
+    network: goerli
+    source:
+      address: "0x67434F025647CB6994b36251fcdC5AC62907dcBA"
+      abi: Treasury
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - TreasuryAdminChanged
+        - TreasuryBeaconUpgraded
+        - TreasuryFundsDeposited
+        - TreasuryFundsWithdrawn
+        - TreasuryInitialized
+        - TreasuryOwnershipTransferred
+        - TreasuryUpgraded
+      abis:
+        - name: Treasury
+          file: ./abis/Treasury.json
+      eventHandlers:
+        - event: AdminChanged(address,address)
+          handler: handleAdminChanged
+        - event: BeaconUpgraded(indexed address)
+          handler: handleBeaconUpgraded
+        - event: FundsDeposited(indexed address,indexed address,indexed uint256)
+          handler: handleFundsDeposited
+        - event: FundsWithdrawn(indexed address,indexed address,indexed address,uint256)
+          handler: handleFundsWithdrawn
+        - event: Initialized(uint8)
+          handler: handleInitialized
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Upgraded(indexed address)
+          handler: handleUpgraded
+      file: ./src/treasury.ts
