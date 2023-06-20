@@ -29,7 +29,7 @@ import {
 
 export function handleAdminChanged(event: AdminChangedEvent): void {
   let entity = new AdminChanged(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.previousAdmin = event.params.previousAdmin
   entity.newAdmin = event.params.newAdmin
@@ -43,7 +43,7 @@ export function handleAdminChanged(event: AdminChangedEvent): void {
 
 export function handleBeaconUpgraded(event: BeaconUpgradedEvent): void {
   let entity = new BeaconUpgraded(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.beacon = event.params.beacon
 
@@ -56,7 +56,7 @@ export function handleBeaconUpgraded(event: BeaconUpgradedEvent): void {
 
 export function handleFundsDeposited(event: FundsDepositedEvent): void {
   let entity = new FundsDeposited(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.sender = event.params.sender
   entity.token = event.params.token
@@ -71,7 +71,7 @@ export function handleFundsDeposited(event: FundsDepositedEvent): void {
 
 export function handleFundsWithdrawn(event: FundsWithdrawnEvent): void {
   let entity = new FundsWithdrawn(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.receiver = event.params.receiver
   entity.initiator = event.params.initiator
@@ -87,7 +87,7 @@ export function handleFundsWithdrawn(event: FundsWithdrawnEvent): void {
 
 export function handleInitialized(event: InitializedEvent): void {
   let entity = new Initialized(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.version = event.params.version
 
@@ -126,7 +126,7 @@ export function handleJobCreated(event: JobCreatedEvent): void {
 
 export function handleJobCreated1(event: JobCreated1Event): void {
   let entity = new JobCreated1(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity._taskCreator = event.params._taskCreator
   entity._jobId = event.params._jobId
@@ -153,7 +153,7 @@ export function handleJobCreated1(event: JobCreated1Event): void {
 
 export function handleJobSuccess(event: JobSuccessEvent): void {
   let entity = new JobSuccess(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.txFee = event.params.txFee
   entity.feeToken = event.params.feeToken
@@ -173,7 +173,7 @@ export function handleOwnershipTransferred(
   event: OwnershipTransferredEvent
 ): void {
   let entity = new OwnershipTransferred(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.previousOwner = event.params.previousOwner
   entity.newOwner = event.params.newOwner
@@ -187,7 +187,7 @@ export function handleOwnershipTransferred(
 
 export function handleUpgraded(event: UpgradedEvent): void {
   let entity = new Upgraded(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.implementation = event.params.implementation
 
@@ -200,7 +200,7 @@ export function handleUpgraded(event: UpgradedEvent): void {
 
 export function handleXReceiveData(event: XReceiveDataEvent): void {
   let entity = new XReceiveData(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.originSender = event.params.originSender
   entity.origin = event.params.origin
@@ -220,7 +220,7 @@ export function handleXReceiveData(event: XReceiveDataEvent): void {
 
 export function handleXTransferData(event: XTransferDataEvent): void {
   let entity = new XTransferData(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity.sender = event.params.sender
   entity.receiver = event.params.receiver

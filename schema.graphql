@@ -1,5 +1,5 @@
 type AdminChanged @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	previousAdmin: Bytes! # address
 	newAdmin: Bytes! # address
 	blockNumber: BigInt!
@@ -8,7 +8,7 @@ type AdminChanged @entity(immutable: true) {
 }
 
 type BeaconUpgraded @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	beacon: Bytes! # address
 	blockNumber: BigInt!
 	blockTimestamp: BigInt!
@@ -16,7 +16,7 @@ type BeaconUpgraded @entity(immutable: true) {
 }
 
 type FundsDeposited @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	sender: Bytes! # address
 	token: Bytes! # address
 	amount: BigInt! # uint256
@@ -26,7 +26,7 @@ type FundsDeposited @entity(immutable: true) {
 }
 
 type FundsWithdrawn @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	receiver: Bytes! # address
 	initiator: Bytes! # address
 	token: Bytes! # address
@@ -37,7 +37,7 @@ type FundsWithdrawn @entity(immutable: true) {
 }
 
 type Initialized @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	version: Int! # uint8
 	blockNumber: BigInt!
 	blockTimestamp: BigInt!
@@ -66,7 +66,7 @@ type JobCreated @entity(immutable: true) {
 }
 
 type JobCreated1 @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	_taskCreator: Bytes! # address
 	_jobId: Bytes! # bytes32
 	_gelatoTaskId: Bytes! # bytes32
@@ -88,7 +88,7 @@ type JobCreated1 @entity(immutable: true) {
 }
 
 type JobSuccess @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	txFee: BigInt! # uint256
 	feeToken: Bytes! # address
 	execAddress: Bytes! # address
@@ -101,7 +101,7 @@ type JobSuccess @entity(immutable: true) {
 }
 
 type OwnershipTransferred @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	previousOwner: Bytes! # address
 	newOwner: Bytes! # address
 	blockNumber: BigInt!
@@ -110,7 +110,7 @@ type OwnershipTransferred @entity(immutable: true) {
 }
 
 type Upgraded @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	implementation: Bytes! # address
 	blockNumber: BigInt!
 	blockTimestamp: BigInt!
@@ -118,7 +118,7 @@ type Upgraded @entity(immutable: true) {
 }
 
 type XReceiveData @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	originSender: Bytes! # address
 	origin: BigInt! # uint32
 	asset: Bytes! # address
@@ -133,7 +133,7 @@ type XReceiveData @entity(immutable: true) {
 }
 
 type XTransferData @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	sender: Bytes! # address
 	receiver: Bytes! # address
 	fromToken: Bytes! # address
@@ -148,7 +148,7 @@ type XTransferData @entity(immutable: true) {
 	transactionHash: Bytes!
 }
 type TreasuryAdminChanged @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	previousAdmin: Bytes! # address
 	newAdmin: Bytes! # address
 	blockNumber: BigInt!
@@ -157,7 +157,7 @@ type TreasuryAdminChanged @entity(immutable: true) {
 }
 
 type TreasuryBeaconUpgraded @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	beacon: Bytes! # address
 	blockNumber: BigInt!
 	blockTimestamp: BigInt!
@@ -165,7 +165,7 @@ type TreasuryBeaconUpgraded @entity(immutable: true) {
 }
 
 type TreasuryFundsDeposited @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	sender: Bytes! # address
 	token: Bytes! # address
 	amount: BigInt! # uint256
@@ -175,7 +175,7 @@ type TreasuryFundsDeposited @entity(immutable: true) {
 }
 
 type TreasuryFundsWithdrawn @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	receiver: Bytes! # address
 	initiator: Bytes! # address
 	token: Bytes! # address
@@ -186,7 +186,7 @@ type TreasuryFundsWithdrawn @entity(immutable: true) {
 }
 
 type TreasuryInitialized @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	version: Int! # uint8
 	blockNumber: BigInt!
 	blockTimestamp: BigInt!
@@ -194,7 +194,7 @@ type TreasuryInitialized @entity(immutable: true) {
 }
 
 type TreasuryOwnershipTransferred @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	previousOwner: Bytes! # address
 	newOwner: Bytes! # address
 	blockNumber: BigInt!
@@ -203,7 +203,7 @@ type TreasuryOwnershipTransferred @entity(immutable: true) {
 }
 
 type TreasuryUpgraded @entity(immutable: true) {
-	id: Bytes!
+	id: String!
 	implementation: Bytes! # address
 	blockNumber: BigInt!
 	blockTimestamp: BigInt!
