@@ -100,7 +100,7 @@ export function handleInitialized(event: InitializedEvent): void {
 
 export function handleJobCreated(event: JobCreatedEvent): void {
   let entity = new JobCreated(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.toHex()
   )
   entity._taskCreator = event.params._taskCreator
   entity._jobId = event.params._jobId
